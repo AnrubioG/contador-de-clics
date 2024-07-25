@@ -1,5 +1,6 @@
 import "./App.css";
 import Button from "./components/Button";
+import Counter from "./components/Counter";
 import fccLogo from "/img/freecodecamp-logo.png";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       </div>
 
       <div className="contenedor-principal">
+        <Counter numClics="2" />
         <Button texto="Clic" esBotonDeClic={true} manejarClic={manejarClic} />
         <Button
           texto="Reiniciar"
