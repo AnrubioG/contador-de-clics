@@ -2,14 +2,17 @@ import "./App.css";
 import Button from "./components/Button";
 import Counter from "./components/Counter";
 import fccLogo from "/img/freecodecamp-logo.png";
+import { useState } from "react";
 
 function App() {
+  const [numClics, setNumClics] = useState(0);
+
   const manejarClic = () => {
-    console.log("Clic");
+    setNumClics(numClics + 1);
   };
 
   const reiniciarContador = () => {
-    console.log("Reiniciar");
+    setNumClics(0);
   };
 
   return (
@@ -19,7 +22,7 @@ function App() {
       </div>
 
       <div className="contenedor-principal">
-        <Counter numClics="2" />
+        <Counter numClics={numClics} />
         <Button texto="Clic" esBotonDeClic={true} manejarClic={manejarClic} />
         <Button
           texto="Reiniciar"
